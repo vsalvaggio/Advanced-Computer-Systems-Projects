@@ -1,0 +1,15 @@
+iters=20971520 sec=0.231387 ops/s=90634147.181 sink=10485693
+
+ Performance counter stats for './mix_miss 16384 8388608 64 1.0':
+
+        1025953593      cycles:u                                                              
+        2400891897      instructions:u                   #    2.34  insn per cycle            
+            149063      cache-references:u                                                    
+             31605      cache-misses:u                   #   21.20% of all cache refs         
+
+       0.238669181 seconds time elapsed
+
+       0.236982000 seconds user
+       0.004085000 seconds sys
+
+

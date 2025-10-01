@@ -1,0 +1,8 @@
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --idle_latency -b16384 -l64 -c0 
+
+Using buffer size of 16.000MiB
+*** Unable to modify prefetchers (try executing 'modprobe msr')
+*** So, enabling random access for latency measurements
+Each iteration took 67.5 base frequency clocks (	26.0	ns)
+

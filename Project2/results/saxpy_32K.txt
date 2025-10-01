@@ -1,0 +1,13 @@
+N=32 time=2.38419e-07 s GFLOP/s=0.268435 BW=1.07374 GB/s [Scalar]
+
+ Performance counter stats for './saxpy --size 32K':
+
+             33066      cache-misses:u                   #   49.66% of all cache refs         
+             66582      cache-references:u                                                    
+
+       0.013183033 seconds time elapsed
+
+       0.000000000 seconds user
+       0.002005000 seconds sys
+
+

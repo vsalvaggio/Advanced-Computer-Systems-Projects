@@ -1,0 +1,31 @@
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --loaded_latency -b256 -W5 -c0 
+
+Using buffer size of 0.250MiB/thread for reads and an additional 0.250MiB/thread for writes
+*** Unable to modify prefetchers (try executing 'modprobe msr')
+*** So, enabling random access for latency measurements
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	 12.81	 477215.6
+ 00002	 12.73	 451843.1
+ 00008	 13.69	 408629.1
+ 00015	 11.15	 327674.7
+ 00050	  7.53	 116213.0
+ 00100	  5.42	  62876.8
+ 00200	  4.64	  40964.1
+ 00300	  4.37	  33108.0
+ 00400	  4.29	  28895.7
+ 00500	  4.29	  25976.7
+ 00700	  4.20	  23155.9
+ 01000	  4.14	  21010.8
+ 01300	  4.06	  20105.5
+ 01700	  4.55	  17054.3
+ 02500	  4.04	  18105.0
+ 03500	  3.98	  17687.6
+ 05000	  4.00	  17117.2
+ 09000	  3.99	  16662.8
+ 20000	  3.95	  16482.2

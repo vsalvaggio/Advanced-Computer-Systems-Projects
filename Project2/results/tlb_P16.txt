@@ -1,0 +1,14 @@
+pages=16 page_size=2097152 iters=100000000 sec=0.583093 sink=100000000
+
+ Performance counter stats for './tlb_test 16 2097152 100000000':
+
+        2525901535      cycles:u                                                              
+         200391161      dTLB-loads:u                                                          
+              8556      dTLB-load-misses:u               #    0.00% of all dTLB cache accesses
+
+       0.598748932 seconds time elapsed
+
+       0.590375000 seconds user
+       0.012131000 seconds sys
+
+
