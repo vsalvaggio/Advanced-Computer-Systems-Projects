@@ -236,4 +236,5 @@ int main(int argc, char** argv) {
     Options opt = parse_args(argc, argv);
     if (opt.dtype == "f32") return run_kernel<float>(opt);
     else return run_kernel<double>(opt);
+
 }
