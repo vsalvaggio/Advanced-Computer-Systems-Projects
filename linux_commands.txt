@@ -1,0 +1,45 @@
+g++ -O3 -march=native -std=c++17 -fopt-info-vec-optimized -fopt-info-vec-missed -o kernel_simd kernels.cpp -DSIMD
+g++ -O3 -march=native -std=c++17 -fopt-info-vec-optimized -fopt-info-vec-missed -o kernel_scalar kernels.cpp -DSCALAR
+
+g++ -O3 -march=native -ftree-vectorize -std=c++17 -fopt-info-vec-optimized -o kernel_simd kernels.cpp -DSIMD
+g++ -O3 -march=native -std=c++17 -fno-tree-vectorize -o kernel_scalar kernels.cpp -DSCALAR
+
+
+
+export CPU_GHZ=2.6
+taskset -c 0 ./kernel_simd
+taskset -c 0 ./kernel_scalar
+# saxpy
+for N in 20000 80000 300000 1200000 5000000 20000000 70000000; do
+   ./kernel_scalar --kernel saxpy --dtype f32 --impl scalar --N $N --reps 5 --csv results/output.csv
+   ./kernel_simd   --kernel saxpy --dtype f32 --impl simd --N $N --reps 5 --csv results/output.csv
+   ./kernel_scalar --kernel saxpy --dtype f64 --impl scalar --N $N --reps 5 --csv results/output.csv
+   ./kernel_simd   --kernel saxpy --dtype f64 --impl simd --N $N --reps 5 --csv results/output.csv
+done
+
+for N in 20000 80000 300000 1200000 5000000 20000000 70000000; do
+  ./kernel_scalar --kernel mul --dtype f32 --impl scalar --N $N --reps 5 --csv results/output.csv
+  ./kernel_simd   --kernel mul --dtype f32 --impl simd --N $N --reps 5 --csv results/output.csv
+  ./kernel_scalar --kernel mul --dtype f64 --impl scalar --N $N --reps 5 --csv results/output.csv
+  ./kernel_simd   --kernel mul --dtype f64 --impl simd --N $N --reps 5 --csv results/output.csv
+done
+
+# dot
+for N in 20000 80000 300000 1200000 5000000 20000000 70000000; do
+  ./kernel_scalar --kernel dot --dtype f32 --impl scalar --N $N --reps 5 --csv results/output.csv
+  ./kernel_simd   --kernel dot --dtype f32 --impl simd --N $N --reps 5 --csv results/output.csv
+  ./kernel_scalar --kernel dot --dtype f64 --impl scalar --N $N --reps 5 --csv results/output.csv
+  ./kernel_simd   --kernel dot --dtype f64 --impl simd --N $N --reps 5 --csv results/output.csv
+done
+
+for mis in 0 4; do
+  for N in 1000000 1000728; do
+    ./kernel_simd --kernel saxpy --dtype f32 --impl simd --N $N --misalign $mis --csv results/misalign_output.csv
+    ./kernel_simd --kernel saxpy --dtype f64 --impl scalar --N $N --misalign $mis --csv results/misalign_output.csv
+  done
+done
+
+./kernel_simd --kernel mul --dtype f32 --impl simd --N 20000000 --stride 1 --csv results/stride_output.csv
+./kernel_simd --kernel mul --dtype f32 --impl simd --N 20000000 --stride 2 --csv results/stride_output.csv
+./kernel_simd --kernel mul --dtype f32 --impl simd --N 20000000 --stride 4 --csv results/stride_output.csv
+./kernel_simd --kernel mul --dtype f32 --impl simd --N 20000000 --stride 8 --csv results/stride_output.csv
