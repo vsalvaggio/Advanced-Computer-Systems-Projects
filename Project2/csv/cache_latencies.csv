@@ -1,0 +1,5 @@
+﻿cache,buffer_size_MiB,base_frequency_clock,ns
+DRAM,256,82.8,31.8
+L1,0.016,2.4,0.9
+L2,0.25,13.2,5.1
+L3,16,67.5,26
