@@ -1,0 +1,6 @@
+Dataset,Threads,Workload,CoarseTput,FineTput
+10000,1,LookupOnly,2.53722e+07,2.82064e+07
+10000,2,LookupOnly,1.94687e+07,1.66369e+07
+10000,4,LookupOnly,1.35717e+07,1.62466e+07
+10000,8,LookupOnly,7.12822e+06,9.66737e+06
+10000,16,LookupOnly,4.23319e+06,6.34467e+06

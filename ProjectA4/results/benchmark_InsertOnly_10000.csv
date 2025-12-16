@@ -1,0 +1,6 @@
+Dataset,Threads,Workload,CoarseTput,FineTput
+10000,1,InsertOnly,1.27722e+07,1.51924e+07
+10000,2,InsertOnly,6.57167e+06,9.56538e+06
+10000,4,InsertOnly,4.25977e+06,1.54465e+07
+10000,8,InsertOnly,3.77853e+06,1.1199e+07
+10000,16,InsertOnly,2.49065e+06,4.72917e+06
