@@ -1,0 +1,7 @@
+Run,Mode,Time_s
+1,regular_read,3.201
+1,sendfile,0.625
+2,regular_read,3.189
+2,sendfile,0.626
+3,regular_read,3.127
+3,sendfile,0.628

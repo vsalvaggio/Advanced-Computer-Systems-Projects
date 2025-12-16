@@ -1,0 +1,7 @@
+Run,Mode,Time_s
+1,no_affinity,1.142
+1,pinned_affinity,1.050
+2,no_affinity,1.083
+2,pinned_affinity,1.089
+3,no_affinity,1.186
+3,pinned_affinity,1.150

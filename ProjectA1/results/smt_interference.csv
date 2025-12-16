@@ -1,0 +1,7 @@
+Run,Mode,Time_s
+1,shared_core,4.545
+1,separate_core,2.217
+2,shared_core,4.436
+2,separate_core,2.225
+3,shared_core,4.354
+3,separate_core,2.433
